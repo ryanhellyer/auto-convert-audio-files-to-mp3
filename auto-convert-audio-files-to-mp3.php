@@ -50,7 +50,7 @@ function acf_filter_audio_after_upload( $data ) {
 
 	// Bail out now if it wasn't processed as other format yet.
 	if ( 'EJECT!' == $caf_extension ) {
-		return;
+		return $data;
 	}
 
 	$file = $data[ 'file' ];
