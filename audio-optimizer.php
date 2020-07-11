@@ -6,7 +6,7 @@ namespace AudioOptimizer;
 Plugin Name: Audio Optimizer
 Plugin URI: https://geek.hellyer.kiwi/plugins/convert-audio-files/
 Description: Converts audio files from WAV to MP3
-Version: 1.0
+Version: 2.0.0
 Author: Ryan Hellyer, Grayson Erhard
 Author URI: https://geek.hellyer.kiwi/
 
