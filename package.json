@@ -1,6 +1,6 @@
 {
   "name": "audio-optimizer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Converts audio files from WAV to MP3.",
   "repository": "https://github.com/ErhardLabs/tunefuze",
   "main": "index.php",
