@@ -5,7 +5,7 @@ namespace AudioOptimizer;
 /*
 Plugin Name: Audio Optimizer
 Description: Converts audio files from WAV to MP3
-Version: 2.1.0
+Version: 1.1.0
 Author: Ryan Hellyer, Grayson Erhard
 */
 
@@ -22,17 +22,17 @@ add_filter( 'wp_handle_upload', 'AudioOptimizer\convert' );
 function convert( $data ) {
 
 	// 160 kbps is the lowest bitrate you can have with the least audible compression difference.
-	$bitrate = 160000;
-
-	// Change file names, check for duplicates.
-	$refactored_data = refactor( $data );
+	$bit_rate        = 160000;
+	$bit_depth       = 's16'; // run 'ffmpeg -sample_fmts' to see all available bit depth settings.
+	$sample_rate     = 44100; // Industry standard.
+	$refactored_data = refactor( $data ); // Change file names, check for duplicates.
 
 	// Validate against unwanted filetypes.
 	if ( ! validated( $refactored_data ) ) {
 		return $data;
 	}
 
-	$command = 'ffmpeg -i ' . $refactored_data['old_file'] . ' -b:a ' . $bitrate . ' ' . $refactored_data['file'];
+	$command = 'ffmpeg -i ' . $refactored_data['old_file'] . ' -b:a ' . $bit_rate . ' -sample_rate ' . $sample_rate . ' -sample_fmt ' . $bit_depth . ' ' . $refactored_data['file'];
 
 	$result = shell_exec( $command );
 
