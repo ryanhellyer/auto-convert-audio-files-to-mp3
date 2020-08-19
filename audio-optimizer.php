@@ -5,7 +5,7 @@ namespace AudioOptimizer;
 /*
 Plugin Name: Audio Optimizer
 Description: Converts audio files from WAV to MP3
-Version: 1.1.0
+Version: 1.1.1
 Author: Ryan Hellyer, Grayson Erhard
 */
 
