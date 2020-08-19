@@ -1,3 +1,9 @@
+#### 1.1.1 (2020-08-19)
+
+##### New Features
+
+*  Added bit depth and sample rate defaults. (2ff2df74)
+
 ### 1.1.0 (2020-08-18)
 
 ##### New Features
