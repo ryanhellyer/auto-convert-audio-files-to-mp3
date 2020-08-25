@@ -32,7 +32,11 @@ function convert( $data ) {
 		return $data;
 	}
 
-	$command = 'ffmpeg -i ' . $refactored_data['old_file'] . ' -b:a ' . $bit_rate . ' -sample_rate ' . $sample_rate . ' -sample_fmt ' . $bit_depth . ' ' . $refactored_data['file'];
+	$command = 'ffmpeg -i ' . $refactored_data['old_file'];
+	$command .= ' -b:a ' . $bit_rate;
+	$command .= ' -sample_rate ' . $sample_rate;
+//	$command .= ' -sample_fmt ' . $bit_depth;
+	$command .= ' ' . $refactored_data['file'];
 
 	$result = shell_exec( $command );
 
